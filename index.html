@@ -11,16 +11,54 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <title>
-      <img src="src/cockerel-wind.jpeg" alt="cockerel-wind"> Weather Me Away
-    </title>
+    <title>Weather Me Away</title>
   </head>
   <body>
-    <div class="container">
-      <div class="weather">
-        <h1>Weather Me Away</h1>
-        <a href="" class="btn btn-primary">Ciao Me</a>
+    <div class="allApp">
+      <div class="container">
+        <div class="weather">
+          <h1>
+            <img id="cock" src="src/cockerel-wind.jpeg" alt="cockerel-wind" />
+            Weather Me Away
+          </h1>
+          <br />
+          <form>
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="City.."
+                  class="cities-field"
+                />
+                <div class="col-3">
+                  <input type="submit" class="btn btn-primary" value="Search" />
+                </div>
+              </div>
+            </div>
+          </form>
+          <br />
+          <div class="row">
+            <div class="col-6">
+              <h4>City..</h4>
+              <h6>
+                Friday 17 July 2017
+                </h6>
+                </h6>
+                17:17CEST
+              </h6>
+            </div>
+            <div class="col-3">
+              <img id="sky" src="src/sun-icon.jpeg" alt="weather-image" />
+            </div>
+            <div class="col-3">
+              <p id="conditions">Clear</p>
+              <p id="temperature">27°C</p>
+              <p id="winds">34kn S/SW</p>
+            </div>
+          </div>
+        </div>
       </div>
+      <small>Coded by <a href="https://github.com/Clacarli"> Claudia Carli</a></small>
     </div>
     <script src="src/WMAapp.js"></script>
   </body>

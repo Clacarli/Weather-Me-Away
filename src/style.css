@@ -1,4 +1,40 @@
+body {
+  margin: 0;
+  display: block;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background: rgb(250, 229, 191);
+}
 h1 {
   color: blueviolet;
   text-align: center;
+}
+
+.allApp {
+  max-width: 800px;
+  margin: 60px auto;
+  background: rgb(250, 229, 191);
+  padding: 45px;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.weather {
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  padding: 40px;
+  color: #878787;
+}
+#cock {
+  width: 70px;
+  height: 70px;
+}
+#sky {
+  width: 100px;
+  height: 100px;
 }
