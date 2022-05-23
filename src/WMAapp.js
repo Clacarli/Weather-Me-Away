@@ -28,15 +28,21 @@ function formatDate(timestamp) {
   ];
   let month = months[fullDate.getMonth()];
   let year = fullDate.getFullYear();
-  let hours = fullDate.getHours();
-  let minutes = fullDate.getMinutes();
   return `${day} ${date} ${month} ${year}`;
 }
 function formatTime(timestamp) {
   let fullDate = new Date(timestamp);
+  let FD = fullDate.toString();
+  let arrayTimezone = FD.split(" ");
+  console.log(arrayTimezone);
   let hours = fullDate.getHours();
   let minutes = fullDate.getMinutes();
-  return `${hours}:${minutes}`;
+  if (hours < 10) {
+    hours = `0${hours}`;
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes} ${arrayTimezone[5]}`;
 }
 function displayTemperature(response) {
   console.log(response);
@@ -52,14 +58,27 @@ function displayTemperature(response) {
   conditionsItem.innerHTML = response.data.weather[0].description;
   windItem.innerHTML = Math.round(response.data.wind.speed);
   dateItem.innerHTML = formatDate(response.data.dt * 1000);
+  timeItem.innerHTML = formatTime(response.data.dt * 1000);
   skyItem.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   skyItem.setAttribute("alt", response.data.weather[0].description);
 }
-let city = "Fort Lauderdale";
-let apiKey = "8c1d3a291a4d37607365dab69374db49";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "8c1d3a291a4d37607365dab69374db49";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function citySubmit(event) {
+  event.preventDefault();
+  let cityInputItem = document.querySelector("#city-input");
+  search(cityInputItem.value);
+}
+search("Firenze");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", citySubmit);

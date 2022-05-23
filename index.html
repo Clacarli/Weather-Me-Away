@@ -23,17 +23,22 @@
             Weather Me Away
           </h1>
           <br />
-          <form>
+          <form id="search-form">
             <div class="row">
               <div class="col-9">
                 <input
                   type="search"
                   placeholder="City.."
-                  class="cities-field"
+                  class="cities-field w-100"
+                  id="city-input"
                 />
-                <div class="col-3">
-                  <input type="submit" class="btn btn-primary" value="Search" />
-                </div>
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  class="btn btn-primary w-100"
+                  value="Search"
+                />
               </div>
             </div>
           </form>
@@ -41,24 +46,23 @@
           <div class="row">
             <div class="col-6">
               <h4 id="cities">City..</h4>
-              <h6 id="date">
-                Friday 17 July 2017
-                </h6>
-                </h6 id="time">
-                17:17CEST
-              </h6>
+              <h6 id="date">Friday 17 July 2017</h6>
+              <h6 id="time">17:17CEST</h6>
             </div>
             <div class="col-3">
               <img id="sky" src="" alt="weather-image" />
             </div>
             <div class="col-3">
               <p id="conditions">Clear</p>
-              <p> <small id="temperature"></small>°C</p>
-              <p> <small id="winds"></small>Km/h</p> 
+              <p><small id="temperature"></small>°C</p>
+              <p><small id="winds"></small>Km/h</p>
             </div>
           </div>
         </div>
-      <small>Coded by <a href="https://github.com/Clacarli"> Claudia Carli</a></small>
+        <small
+          >Coded by
+          <a href="https://github.com/Clacarli"> Claudia Carli</a></small
+        >
       </div>
     </div>
     <script src="src/WMAapp.js"></script>
