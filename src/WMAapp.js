@@ -45,7 +45,7 @@ function formatTime() {
   return `${hours}:${minutes} ${arrayTimezone[5]}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastItem = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let daysForecast = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
@@ -67,6 +67,13 @@ function displayForecast() {
   forecastItem.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "8c1d3a291a4d37607365dab69374db49";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&unit=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let temperatureItem = document.querySelector("#temperature");
   let cityItem = document.querySelector("#cities");
@@ -81,12 +88,13 @@ function displayTemperature(response) {
   windItem.innerHTML = Math.round(response.data.wind.speed);
   dateItem.innerHTML = formatDate(response.data.dt * 1000);
   timeItem.innerHTML = formatTime(response.data.dt * 1000);
-  console.log(response.data.dt * 1000);
   skyItem.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   skyItem.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -102,7 +110,6 @@ function citySubmit(event) {
   search(cityInputItem.value);
 }
 search("Firenze");
-displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySubmit);
