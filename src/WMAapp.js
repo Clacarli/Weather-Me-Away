@@ -30,8 +30,8 @@ function formatDate(timestamp) {
   let year = fullDate.getFullYear();
   return `${day} ${date} ${month} ${year}`;
 }
-function formatTime(timestamp) {
-  let fullDate = new Date(timestamp);
+function formatTime() {
+  let fullDate = new Date();
   let FD = fullDate.toString();
   let arrayTimezone = FD.split(" ");
   let hours = fullDate.getHours();
@@ -58,6 +58,7 @@ function displayTemperature(response) {
   windItem.innerHTML = Math.round(response.data.wind.speed);
   dateItem.innerHTML = formatDate(response.data.dt * 1000);
   timeItem.innerHTML = formatTime(response.data.dt * 1000);
+  console.log(response.data.dt * 1000);
   skyItem.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -68,7 +69,7 @@ function displayTemperature(response) {
 function search(city) {
   let apiKey = "8c1d3a291a4d37607365dab69374db49";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+  console.log(city);
   axios.get(apiUrl).then(displayTemperature);
 }
 
