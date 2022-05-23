@@ -34,7 +34,6 @@ function formatTime(timestamp) {
   let fullDate = new Date(timestamp);
   let FD = fullDate.toString();
   let arrayTimezone = FD.split(" ");
-  console.log(arrayTimezone);
   let hours = fullDate.getHours();
   let minutes = fullDate.getMinutes();
   if (hours < 10) {
@@ -46,7 +45,6 @@ function formatTime(timestamp) {
   return `${hours}:${minutes} ${arrayTimezone[5]}`;
 }
 function displayTemperature(response) {
-  console.log(response);
   let temperatureItem = document.querySelector("#temperature");
   let cityItem = document.querySelector("#cities");
   let conditionsItem = document.querySelector("#conditions");
