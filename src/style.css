@@ -9,6 +9,9 @@ h1 {
 small {
   color: #616060;
 }
+small {
+  margin-bottom: 5px;
+}
 
 .allApp {
   max-width: 800px;

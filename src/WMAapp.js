@@ -44,6 +44,29 @@ function formatTime() {
   }
   return `${hours}:${minutes} ${arrayTimezone[5]}`;
 }
+
+function displayForecast() {
+  let forecastItem = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let daysForecast = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
+  daysForecast.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img src="src/sun-icon.jpeg" alt="" width="40" />
+        <div class="weather-forecast-temperature">
+          <span class="max-temp">18°</span>
+          <span class="min-temp">17°</span>
+        </div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastItem.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureItem = document.querySelector("#temperature");
   let cityItem = document.querySelector("#cities");
@@ -79,6 +102,7 @@ function citySubmit(event) {
   search(cityInputItem.value);
 }
 search("Firenze");
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySubmit);
