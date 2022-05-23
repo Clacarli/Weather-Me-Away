@@ -41,12 +41,17 @@ small {
 }
 #conditions {
   margin-bottom: 5px;
+  font-size: 17px;
 }
-
+#conditions::first-letter {
+  text-transform: capitalize;
+}
 #temperature {
   margin-bottom: 5px;
+  font-size: 17px;
 }
 
 #winds {
   margin-bottom: 5px;
+  font-size: 17px;
 }
