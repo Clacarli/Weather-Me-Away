@@ -1,18 +1,24 @@
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-image: url(src/nasa-sun.jpeg) !important;
-  height: 100%;
+  background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/08_plasma_blast_2.gif) !important;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
   margin: 0;
 }
 h1 {
-  color: blueviolet;
+  color: antiquewhite;
   text-align: center;
 }
 small {
-  color: #616060;
+  color: antiquewhite;
 }
 small {
   margin-bottom: 5px;
+}
+a {
+  color: #f1be7b !important;
+  text-decoration: none !important;
 }
 
 .allApp {
@@ -22,6 +28,7 @@ small {
 }
 .container {
   width: 100%;
+
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -29,11 +36,15 @@ small {
 }
 .weather {
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
-  background: #fff8eb;
+  background: #000;
   border-radius: 16px;
-  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  box-shadow: -20px 1px 20px #b484714f;
   padding: 40px;
-  color: #616060;
+  color: antiquewhite;
+  display: block;
+  margin-left: 0;
+  margin-right: 130px;
+  margin-top: 60px;
 }
 .col-9 {
   flex: 0 0 75%;
@@ -43,6 +54,11 @@ small {
   flex: 0 0 25%;
   max-width: 25%;
 }
+.btn {
+  background-color: #f1be7b !important;
+  border: none !important;
+  color: #111111 !important;
+}
 .cities-field {
   height: 38px;
 }
@@ -51,16 +67,17 @@ small {
   text-align: center;
 }
 .weather-forecast-date {
-  font-size: 16px;
+  font-size: 14px;
 }
 .weather-forecast-temperature {
   font-size: 13px;
 }
 .max-temp {
-  color: #3b3b3b;
+  color: antiquewhite;
+  font-weight: bold;
 }
 .min.temp {
-  color: #a8a8a8;
+  color: antiquewhite;
 }
 #cock {
   width: 70px;
@@ -73,17 +90,17 @@ small {
 }
 #conditions {
   margin-bottom: 5px;
-  font-size: 17px;
+  font-size: 15px;
 }
 #conditions::first-letter {
   text-transform: capitalize;
 }
 #temperature {
   margin-bottom: 5px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 #winds {
   margin-bottom: 5px;
-  font-size: 17px;
+  font-size: 15px;
 }
