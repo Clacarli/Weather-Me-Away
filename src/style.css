@@ -81,13 +81,16 @@ a {
 .min.temp {
   color: #d6e3e6;
 }
-#cock {
+#tornado {
   width: 70px;
   height: 70px;
 }
 #city-input {
   padding: 5px;
   border-radius: 7px;
+}
+#cities {
+  font-size: 28px !important;
 }
 #sky {
   width: 100px;
