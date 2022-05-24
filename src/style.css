@@ -16,6 +16,9 @@ small {
 small {
   margin-bottom: 5px;
 }
+p {
+  font-size: 14px;
+}
 a {
   color: #f1be7b !important;
   text-decoration: none !important;
@@ -38,12 +41,12 @@ a {
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
   background: #000;
   border-radius: 16px;
-  box-shadow: -20px 1px 20px #b484714f;
+  box-shadow: -7px 1px 10px #b484714f;
   padding: 40px;
   color: antiquewhite;
   display: block;
   margin-left: 0;
-  margin-right: 130px;
+
   margin-top: 60px;
 }
 .col-9 {
@@ -56,7 +59,7 @@ a {
 }
 .btn {
   background-color: #f1be7b !important;
-  border: none !important;
+  border: #000 !important;
   color: #111111 !important;
 }
 .cities-field {
@@ -83,24 +86,30 @@ a {
   width: 70px;
   height: 70px;
 }
-
+#city-input {
+  padding: 5px;
+  border-radius: 7px;
+}
 #sky {
   width: 100px;
   height: 100px;
 }
+#date {
+  font-size: 14px;
+}
 #conditions {
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: 14px;
 }
 #conditions::first-letter {
   text-transform: capitalize;
 }
 #temperature {
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 #winds {
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: 14px;
 }
